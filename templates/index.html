@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>360G-STEPS街舞社公演入场券！开抢啦！还有程序员在跳舞的视频!</title>
+    <meta name="description" content="一个连程序猿都会Hip-Hop的街舞社团，来瞧瞧我们的另一面！" />
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/count.css">
+    <link rel="stylesheet" href="static/css/layer.css">
+</head>
+<body>
+<img src="static/img/logo.png" style="width:0px; height:0px; overflow:hidden; position: absolute;"  alt="">
+
+<div id="formbackground" style="position:absolute; width:100%; height:100%; z-index:-1">
+    <img src="static/img/bg.png" height="100%" width="100%"/>
+</div>
+
+<div class="video-link">
+    <a href="/activity"><img src="static/img/video.png" alt=""></a>
+</div>
+
+<div class="info">
+    <a href="javascript:;"><img src="static/img/info.png" alt=""></a>
+</div>
+
+<div class="title-wrap">
+   <img src="static/img/title1.png" class="title1">
+   <img src="static/img/title2.png" class="title2">
+</div>
+<div id="counter" style="visibility: hidden">
+    <span class="days"></span>
+    <span class="hours"></span>
+    <span class="minutes"></span>
+    <span class="seconds"></span>
+</div>
+<div id="full" style="display:none">{{remain_cheer_num}}</div>
+<div class="ticket-wrapper">
+    <h3 class="ticket-title">G-STEPS 3周年公演入场票</h3>
+    <div class="ticket_img_wrapper">
+        <img src="static/img/ticket.png" class="ticket" alt="">
+        {% if remain_cheer_num<=0%}
+
+        {% elif  remain_cheer_num<=20 %}
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+        {% endif%}
+
+    </div>
+</div>
+
+<!-- 剩余加油个数个数:{{remain_cheer_num}}-->
+
+{% if remain_cheer_num<=0%}
+<!-- 集齐赞的状态-->
+<!-- 在这里嵌入相应的html即可-->
+
+<div class="exchange-wrapper">
+    <p>恭喜您已成功兑换，现场出具此页面即可入场</p>
+</div>
+
+<div class="success-wrapper">
+    <h3>注意：</h3>
+    <p>入场票仅代表拥有入场的权限</p>
+    <p>也就是说您得尽量去早一些排队入场</p>
+    <p>否则太晚，座位都被坐完，您就可能只能站着看</p>
+</div>
+
+<h3 class="ticket-title">入场时间：6月17日晚19:30</h3>
+<h3 class="ticket-title">演出地点：798剧场</h3>
+
+{% elif  remain_cheer_num<=20 %}
+<!--已经被加油但是还未集齐的状态 -->
+
+<div class="exchange-wrapper">
+    <p>你还差<span class="remain_cheer_num">{{ remain_cheer_num }}</span>人加油即可兑换</p>
+</div>
+
+<div class="button-wrapper">
+    <button class="btn btn-help">让盆友帮忙兑票</button>
+    <p class="want-tips" style="display:none">发送给盆友的方法：点击右上角分享，你懂的!</p>
+</div>
+
+{% endif%}
+
+<div class="footer">
+<a href="#">360G-STEPS街舞社</a>|<a href="#">360员工关怀</a>
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+<script src="static/js/main.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+$.ajax({
+  url: "/conf_menu_share",
+  type: "GET",
+  dataType: "json",
+  success: function(data) {
+        var config = {
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+    appId: data.appid, // 必填，公众号的唯一标识
+    timestamp: data.timestamp, // 必填，生成签名的时间戳
+    nonceStr: data.noncestr, // 必填，生成签名的随机串
+    signature: data.signature,// 必填，签名，见附录1
+    jsApiList: data.js_api_list// 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+         }
+
+        console.log(config);
+      wx.config(config);
+      wx.ready(function () {
+  wx.onMenuShareAppMessage({
+      title: '360G-STEPS街舞社公演入场券！开抢啦！还有程序员在跳舞的视频！',
+      desc: '一个连程序猿都会Hip-Hop的街舞社团，来瞧瞧我们的另一面！',
+      link: data.link,
+      imgUrl: 'http://www.weiyubb.cn/static/img/logo.png',
+      trigger: function (res) {
+      },
+      success: function (res) {
+      },
+      cancel: function (res) {
+      },
+      fail: function (res) {
+        alert(JSON.stringify(res));
+      }
+    });
+      })
+  }
+})
+</script>
+
+<script>
+    var ticket_models = $(".ticket_modal")
+    ticket_models.each(function(index, ele) {
+        $(this).css("left", index * 5 + "%")
+    })
+    var num = 20 - parseInt($(".remain_cheer_num").eq(0).text());
+    ticket_models.filter(":lt("+ num +")").addClass('hide');
+
+    $(".btn-help").on('click', function(){
+        $(".want-tips").show();
+    })
+    if($("#full").text() == 0){
+      layer.open({
+          title: [
+          '重要提示',
+          'background-color:#182f52; color:#fff;'
+          ],
+          content:'<p>大家太热情，我们的门票严重超发！</p><p>现场座位有限，请尽早来排队进场！</p><p style="color:red">否则很有可能有票也进不去哦！</p>',
+          btn:['确定']
+      })
+    }
+</script>
+</body>
+</html>

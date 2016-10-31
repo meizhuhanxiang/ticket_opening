@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>360G-STEPS街舞社公演入场券！开抢啦！还有程序员在跳舞的视频！</title>
+    <meta name="description" content="一个连程序猿都会Hip-Hop的街舞社团，来瞧瞧我们的另一面！" />
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/count.css">
+    <link rel="stylesheet" href="static/css/layer.css">
+</head>
+<body>
+<img src="static/img/logo.png" style="width:0px; height:0px; overflow:hidden; position: absolute;"  alt="">
+
+<div id="formbackground" style="position:absolute; width:100%; height:100%; z-index:-1">
+<img src="static/img/bg.png" height="100%" width="100%"/>
+</div>
+
+<div class="video-link">
+    <a href="/activity"><img src="static/img/video.png" alt=""></a>
+</div>
+
+<div class="info">
+    <a href="javascript:;"><img src="static/img/info.png" alt=""></a>
+</div>
+
+<div class="title-wrap">
+   <img src="static/img/title1.png" class="title1">
+   <img src="static/img/title2.png" class="title2">
+</div>
+
+<div id="counter">
+    <span class="days"></span>
+    <span class="hours"></span>
+    <span class="minutes"></span>
+    <span class="seconds"></span>
+</div>
+
+<div class="ticket-wrapper">
+    <h3 class="ticket-title">G-STEPS 3周年公演入场票</h3>
+    <div class="ticket_img_wrapper">
+        <img src="static/img/ticket.png" class="ticket" alt="">
+        <div class="ticket_modal"></div>
+        <div class="ticket_modal"></div>
+        <div class="ticket_modal"></div>
+        <div class="ticket_modal"></div>
+        <div class="ticket_modal"></div>
+        <div class="ticket_modal"></div>
+        <div class="ticket_modal"></div>
+        <div class="ticket_modal"></div>
+        <div class="ticket_modal"></div>
+        <div class="ticket_modal"></div>
+        <div class="ticket_modal"></div>
+        <div class="ticket_modal"></div>
+        <div class="ticket_modal"></div>
+        <div class="ticket_modal"></div>
+        <div class="ticket_modal"></div>
+        <div class="ticket_modal"></div>
+        <div class="ticket_modal"></div>
+        <div class="ticket_modal"></div>
+        <div class="ticket_modal"></div>
+        <div class="ticket_modal"></div>
+    </div>
+</div>
+
+
+<div class="exchange-wrapper">
+    <p>你的好友还差<span class="remain_cheer_num">{{ remain_cheer_num }}</span>人加油即可兑换</p>
+</div>
+
+<div class="button-wrapper">
+    <a class="btn btn-cheerup" href="javascript:;" onclick="cheer('{{ union_id }}', '{{ target_union_id }}')">帮TA抢票</a>
+    <a class="btn btn-want-also" href="/activity">我也要入场票</a>
+</div>
+
+<div class="footer">
+<a href="#">360G-STEPS街舞社</a>|<a href="#">360员工关怀</a>
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+<script src="static/js/main.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+$.ajax({
+  url: "/conf_menu_share",
+  type: "GET",
+  dataType: "json",
+  success: function(data) {
+        var config = {
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+    appId: data.appid, // 必填，公众号的唯一标识
+    timestamp: data.timestamp, // 必填，生成签名的时间戳
+    nonceStr: data.noncestr, // 必填，生成签名的随机串
+    signature: data.signature,// 必填，签名，见附录1
+    jsApiList: data.js_api_list// 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+         }
+
+        console.log(config);
+      wx.config(config);
+      wx.ready(function () {
+  wx.onMenuShareAppMessage({
+      title: '360G-STEPS街舞社公演入场券！开抢啦！里面还有神奇的视频哦！',
+      desc: '一个连程序猿都会Hip-Hop的街舞社团，来瞧瞧我们的另一面！',
+      link: data.link,
+      imgUrl: 'http://www.weiyubb.cn/static/img/logo.png',
+      trigger: function (res) {
+      },
+      success: function (res) {
+      },
+      cancel: function (res) {
+      },
+      fail: function (res) {
+        alert(JSON.stringify(res));
+      }
+    });
+      })  
+  } 
+})
+</script>
+
+<script>
+
+
+    var ticket_models = $(".ticket_modal")
+    ticket_models.each(function(index, ele) {
+        $(this).css("left", index * 5 + "%")
+    })
+
+    var num = 20 - parseInt($(".remain_cheer_num").text());
+    ticket_models.filter(":lt("+num+")").addClass('hide');
+
+    function cheer(union_id, target_union_id) {
+        var data = {"union_id": union_id, 'target_union_id': target_union_id};
+        $.ajax({
+            url: '/async_cheer',
+            dataType: "json",
+            async: true,
+            data: data,
+            type: "POST",
+            success: function (req) {
+                if (req.code == 1) {
+                    layer.open({
+                        title: [
+                        '360G-STEPS公演入场票兑换',
+                        'background-color:#182f52; color:#fff;'
+                        ],
+                        content:'<h3 class="layer-con-title">恭喜您已经成功加油</h3><p>帮助您的朋友在兑票的道路上迈出重要一步！</p>',
+                        btn:['确定']
+                    })
+
+                    var num = 20 - req.target_remain_cheer_num;
+
+                    if(num == 0) {
+                        $(".exchange-wrapper p").html("您的朋友已经成功获取入场票");
+                    } else {
+                        ticket_models.eq(num-1).addClass('hide');
+                        $(".exchange-wrapper p").html("您已成功为盆友加油");
+                    }
+
+                } else if (req.code == 5){
+                    layer.open({
+                        title: [
+                        '360G-STEPS公演入场票兑换',
+                        'background-color:#182f52; color:#fff;'
+                        ],
+                        content:'<p>您之前已经成功加油，不能重复哦！</p>',
+                        btn:['确定']
+                    })
+                } else{
+                    layer.open({
+                        title: [
+                        '360G-STEPS公演入场票兑换',
+                        'background-color:#182f52; color:#fff;'
+                        ],
+                        content:"加油失败:错误码" + req.code,
+                        btn:['确定']
+                    })
+                }
+
+            }
+        });
+
+    }
+</script>
+</body>
+</html>

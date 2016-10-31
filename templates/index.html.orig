@@ -1,0 +1,250 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>360G-STEPS街舞社公演入场券！开抢啦！</title>
+    <meta name="description" content="一个连程序猿都会Hip-Hop的街舞社团，来瞧瞧我们的另一面！" />
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/count.css">
+    <link rel="stylesheet" href="static/css/layer.css">
+</head>
+<body>
+
+<div id="formbackground" style="position:absolute; width:100%; height:100%; z-index:-1">
+    <img src="static/img/bg.png" height="100%" width="100%"/>
+</div>
+
+<div class="video-link">
+    <a href="/activity"><img src="static/img/video.png" alt=""></a>
+</div>
+
+<div class="info">
+    <a href="javascript:;"><img src="static/img/info.png" alt=""></a>
+</div>
+
+<div class="title-wrap">
+   <img src="static/img/title1.png" class="title1">
+   <img src="static/img/title2.png" class="title2">
+</div>
+<div id="counter" style="visibility: hidden">
+    <span class="days"></span>
+    <span class="hours"></span>
+    <span class="minutes"></span>
+    <span class="seconds"></span>
+</div>
+
+<div class="ticket-wrapper">
+    <h3 class="ticket-title">G-STEPS 3周年公演入场票</h3>
+    <div class="ticket_img_wrapper">
+        <img src="static/img/ticket.png" class="ticket" alt="">
+        {% if remain_cheer_num<=0%}
+
+        {% elif  remain_cheer_num<=20 %}
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+        {% endif%}
+
+    </div>
+</div>
+
+<!-- 剩余加油个数个数:{{remain_cheer_num}}-->
+
+{% if remain_cheer_num<=0%}
+<!-- 集齐赞的状态-->
+<!-- 在这里嵌入相应的html即可-->
+
+<div class="exchange-wrapper">
+    <p>恭喜您已成功兑换，现场出具此页面即可入场</p>
+</div>
+
+<div class="success-wrapper">
+    <h3>注意：</h3>
+    <p>入场票仅代表拥有入场的权限</p>
+    <p>也就是说您得尽量去早一些排队入场</p>
+    <p>否则太晚，座位都被坐完，您就可能只能站着看</p>
+</div>
+
+<h3 class="ticket-title">入场时间：6月17日晚19:30</h3>
+<h3 class="ticket-title">演出地点：798剧场</h3>
+
+{% elif  remain_cheer_num<=20 %}
+<!--已经被加油但是还未集齐的状态 -->
+
+<div class="exchange-wrapper">
+    <p>你还差<span class="remain_cheer_num">{{ remain_cheer_num }}</span>人加油即可兑换</p>
+</div>
+
+<div class="button-wrapper">
+    <button class="btn btn-help">让盆友帮忙兑票</button>
+    <p class="want-tips" style="display:none">发送给盆友的方法：点击右上角分享，你懂的!</p>
+</div>
+
+{% endif%}
+
+<div class="footer">
+<a href="#">360G-STEPS街舞社</a>|<a href="#">360员工关怀</a>
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+<script src="static/js/main.js"></script>
+
+<script>
+
+    var ticket_models = $(".ticket_modal")
+    ticket_models.each(function(index, ele) {
+        $(this).css("left", index * 5 + "%")
+    })
+    var num = 20 - parseInt($(".remain_cheer_num").eq(0).text());
+    ticket_models.filter(":lt("+ num +")").addClass('hide');
+
+    $(".btn-help").on('click', function(){
+        $(".want-tips").show();
+    })
+</script>
+</body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>360G-STEPS街舞社公演入场券！开抢啦！</title>
+    <meta name="description" content="一个连程序猿都会Hip-Hop的街舞社团，来瞧瞧我们的另一面！" />
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/count.css">
+    <link rel="stylesheet" href="static/css/layer.css">
+</head>
+<body>
+
+<div id="formbackground" style="position:absolute; width:100%; height:100%; z-index:-1">
+    <img src="static/img/bg.png" height="100%" width="100%"/>
+</div>
+
+<div class="video-link">
+    <a href="/activity"><img src="static/img/video.png" alt=""></a>
+</div>
+
+<div class="info">
+    <a href="javascript:;"><img src="static/img/info.png" alt=""></a>
+</div>
+
+<div class="title-wrap">
+   <img src="static/img/title1.png" class="title1">
+   <img src="static/img/title2.png" class="title2">
+</div>
+<div id="counter" style="visibility: hidden">
+    <span class="days"></span>
+    <span class="hours"></span>
+    <span class="minutes"></span>
+    <span class="seconds"></span>
+</div>
+
+<div class="ticket-wrapper">
+    <h3 class="ticket-title">G-STEPS 3周年公演入场票</h3>
+    <div class="ticket_img_wrapper">
+        <img src="static/img/ticket.png" class="ticket" alt="">
+        {% if remain_cheer_num<=0%}
+
+        {% elif  remain_cheer_num<=20 %}
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+            <div class="ticket_modal"></div>
+        {% endif%}
+
+    </div>
+</div>
+
+<!-- 剩余加油个数个数:{{remain_cheer_num}}-->
+
+{% if remain_cheer_num<=0%}
+<!-- 集齐赞的状态-->
+<!-- 在这里嵌入相应的html即可-->
+
+<div class="exchange-wrapper">
+    <p>恭喜您已成功兑换，现场出具此页面即可入场</p>
+</div>
+
+<div class="success-wrapper">
+    <h3>注意：</h3>
+    <p>入场票仅代表拥有入场的权限</p>
+    <p>也就是说您得尽量去早一些排队入场</p>
+    <p>否则太晚，座位都被坐完，您就可能只能站着看</p>
+</div>
+
+<h3 class="ticket-title">入场时间：6月17日晚19:30</h3>
+<h3 class="ticket-title">演出地点：798剧场</h3>
+
+{% elif  remain_cheer_num<=20 %}
+<!--已经被加油但是还未集齐的状态 -->
+
+<div class="exchange-wrapper">
+    <p>你还差<span class="remain_cheer_num">{{ remain_cheer_num }}</span>人加油即可兑换</p>
+</div>
+
+<div class="button-wrapper">
+    <button class="btn btn-help">让盆友帮忙兑票</button>
+    <p class="want-tips" style="display:none">发送给盆友的方法：点击右上角分享，你懂的!</p>
+</div>
+
+{% endif%}
+
+<div class="footer">
+<a href="#">360G-STEPS街舞社</a>|<a href="#">360员工关怀</a>
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+<script src="static/js/main.js"></script>
+
+<script>
+
+    var ticket_models = $(".ticket_modal")
+    ticket_models.each(function(index, ele) {
+        $(this).css("left", index * 5 + "%")
+    })
+    var num = 20 - parseInt($(".remain_cheer_num").eq(0).text());
+    ticket_models.filter(":lt("+ num +")").addClass('hide');
+
+    $(".btn-help").on('click', function(){
+        $(".want-tips").show();
+    })
+</script>
+</body>
+>>>>>>> 3e3ff5384d6d746b5d2b1b02d34ba7de5b5e50b3
+</html>

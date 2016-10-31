@@ -1,0 +1,71 @@
+#counter {
+  text-align: center;
+  margin: 30px auto -15px;
+  display: block;
+  font-size: 2em;
+  color: #282828;
+}
+@media (max-width: 500px) {
+  #counter {
+    font-size: 1.5em;
+  }
+}
+#counter span,
+#counter i {
+  display: inline-block;
+  vertical-align: middle;
+}
+#counter span {
+  display: inline-block;
+  min-height: 38px;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  min-width: 45px;
+  text-rendering: optimizeLegibility;
+  position: relative;
+  background-color: #111a21;
+  margin: 0 5px;
+  padding: 5px;
+  color: #4e91ff;
+  border-radius: 5px;
+  border: 1px solid #040000;
+  text-shadow: 0 0 2px #040000;
+  font-size: 2em;
+  font-weight: bold;
+}
+#counter span.days:before {
+  content: "DAYS";
+}
+#counter span.hours:before {
+  content: "HOUR";
+}
+#counter span.minutes:before {
+  content: "MIN";
+}
+#counter span.seconds:before {
+  content: "SEC";
+}
+#counter span:before {
+  top: -20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: block;
+  color: #4e91ff;
+  font-size: 0.35em;
+  text-shadow: none;
+  font-family: 'Arial';
+}
+#counter span:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  margin-top: 0.5px;
+  background-color: #1b2026;
+}
+#counter i {
+  font-style: normal;
+}

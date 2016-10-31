@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+db.json
+*.log
+*.pyc
+nohup.out
+global_conf.py
+node_modules/
+public/
+.deploy*/

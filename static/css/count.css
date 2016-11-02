@@ -1,71 +1,260 @@
-#counter {
-  text-align: center;
-  margin: 30px auto -15px;
-  display: block;
-  font-size: 2em;
-  color: #282828;
+#fullpage {
+  /*background-color: #000;*/
 }
-@media (max-width: 500px) {
-  #counter {
-    font-size: 1.5em;
+.section {
+  text-align: center;
+}
+.section h3.title-wrapper {
+  text-align: left;
+}
+.section h3.title-wrapper img.title {
+  width: 41%;
+  margin: 10px 0 10px 10px;
+  margin-left: 10%;
+}
+.button-wrapper {
+  position: absolute;
+  bottom: 5px;
+  width: 230px;
+  margin: 0 auto;
+  left: 50%;
+  margin-left: -115px;
+}
+.button-wrapper .bottom-button {
+  width: 100%;
+}
+.box-wrapper {
+  position: relative;
+  border: 1px solid #ffb400;
+  background-size: cover;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 80%;
+}
+#section1 {
+  background: url(../img/section/section1/section1-bg.png);
+  background-size: cover;
+  background-attachment: fixed;
+  -webkit-animation: change 2s linear;
+}
+#section1 .texttitle,
+#section1 .hand,
+#section1 .board {
+  width: 80%;
+  margin-top: 20px;
+}
+#section1 .board {
+  margin-top: 0;
+}
+.black-bg {
+  background: url(../img/section/black-bg.png);
+  background-size: cover;
+}
+#section2 #slide1 .box-wrapper {
+  background: url(../img/section/section2/slide1/bg.png);
+  background-size: cover;
+}
+#section2 #slide1 .person1 {
+  position: relative;
+  top: -37px;
+  width: 90%;
+}
+#section2 #slide1 .person2 {
+  width: 51%;
+  position: relative;
+  left: -48px;
+  top: -57px;
+}
+#section2 #slide1 .name {
+  width: 53%;
+  position: absolute;
+  left: 44%;
+  top: 39%;
+}
+#section2 #slide2 .box-wrapper {
+  background: url(../img/section/section2/slide2/bg.png);
+  background-size: cover;
+}
+#section2 #slide2 .person1 {
+  position: absolute;
+  top: 35%;
+  width: 51%;
+  left: -4%;
+}
+#section2 #slide2 .person2 {
+  width: 64%;
+  position: absolute;
+  left: 56%;
+  top: 9%;
+}
+#section2 #slide2 .name {
+  width: 43%;
+  position: absolute;
+  left: 54%;
+  top: 67%;
+}
+#section2 #slide3 .box-wrapper {
+  background: url(../img/section/section2/slide3/bg.png);
+  background-size: cover;
+}
+#section2 #slide3 .person1 {
+  position: absolute;
+  top: 10%;
+  width: 66%;
+  left: 9%;
+}
+#section2 #slide3 .person2 {
+  width: 32%;
+  position: absolute;
+  left: 52%;
+  top: 44%;
+}
+#section2 #slide3 .name {
+  width: 30%;
+  position: absolute;
+  left: 8%;
+  top: 66%;
+}
+#section2 #slide4 .box-wrapper {
+  background: url(../img/section/section2/slide4/bg.png);
+  background-size: cover;
+}
+#section2 #slide4 .person1 {
+  position: absolute;
+  top: 1%;
+  width: 43%;
+  left: -2%;
+}
+#section2 #slide4 .person2 {
+  width: 83%;
+  position: absolute;
+  left: 34%;
+  top: 58%;
+}
+#section2 #slide4 .name {
+  width: 24%;
+  position: absolute;
+  left: 73%;
+  top: 4%;
+}
+#section2 #slide5 .box-wrapper {
+  background: url(../img/section/section2/slide5/bg.png);
+  background-size: cover;
+}
+#section2 #slide5 .person1 {
+  position: absolute;
+  top: 9%;
+  width: 58%;
+  left: 37%;
+}
+#section2 #slide5 .person2 {
+  width: 50%;
+  position: absolute;
+  left: 10%;
+  top: 54%;
+}
+#section2 #slide5 .name {
+  width: 56%;
+  position: absolute;
+  left: 22%;
+  top: 35%;
+}
+#section2 #slide6 .box-wrapper {
+  background: url(../img/section/section2/slide6/bg.png);
+  background-size: cover;
+}
+#section2 #slide6 .person1 {
+  position: absolute;
+  top: 1%;
+  width: 82%;
+  left: 4%;
+}
+#section2 #slide6 .person2 {
+  width: 46%;
+  position: absolute;
+  left: 26%;
+  top: 66%;
+}
+#section2 #slide6 .name {
+  width: 71%;
+  position: absolute;
+  left: 17%;
+  top: 51%;
+}
+#section3 {
+  background: url(../img/section/section3/bg.png);
+  background-size: cover;
+  /*  .bonus-wrapper {
+      width: 100%;
+      .bonus {
+        display: inline-block;
+        width: 49%;
+        div{
+          display: inline-block;
+        }
+        .avtar {
+          width: 39%;
+        }
+        .slogan {
+          width: 59%;
+        }
+      }
+  }*/
+}
+#section3 .gstar {
+  width: 80%;
+  margin-top: 10px;
+}
+#section3 .white-bg {
+  width: 100%;
+  margin-top: 10px;
+  position: relative;
+  top: 27%;
+  z-index: 1;
+}
+#section3 .text-title {
+  width: 100%;
+  margin-top: 10px;
+  position: absolute;
+  top: 29%;
+  z-index: 2;
+  left: 0;
+}
+#section3 .bonus {
+  width: 80%;
+  margin-top: 10px;
+  position: relative;
+  top: 24%;
+}
+#section3 .explain-text {
+  width: 70%;
+  margin-top: 10px;
+  position: relative;
+  top: 24%;
+}
+.teacher {
+  width: 100%;
+  height: 100%;
+}
+#section7 {
+  background: url(../img/section/section7/course.png);
+  background-size: cover;
+}
+@keyframes change {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
   }
 }
-#counter span,
-#counter i {
-  display: inline-block;
-  vertical-align: middle;
+.fp-controlArrow.fp-prev {
+  border-width: 14.5px 17px 14.5px 0;
 }
-#counter span {
-  display: inline-block;
-  min-height: 38px;
-  font-family: 'Arial', sans-serif;
-  text-align: center;
-  min-width: 45px;
-  text-rendering: optimizeLegibility;
-  position: relative;
-  background-color: #111a21;
-  margin: 0 5px;
-  padding: 5px;
-  color: #4e91ff;
-  border-radius: 5px;
-  border: 1px solid #040000;
-  text-shadow: 0 0 2px #040000;
-  font-size: 2em;
-  font-weight: bold;
-}
-#counter span.days:before {
-  content: "DAYS";
-}
-#counter span.hours:before {
-  content: "HOUR";
-}
-#counter span.minutes:before {
-  content: "MIN";
-}
-#counter span.seconds:before {
-  content: "SEC";
-}
-#counter span:before {
-  top: -20px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  display: block;
-  color: #4e91ff;
-  font-size: 0.35em;
-  text-shadow: none;
-  font-family: 'Arial';
-}
-#counter span:after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 1px;
-  margin-top: 0.5px;
-  background-color: #1b2026;
-}
-#counter i {
-  font-style: normal;
+.fp-controlArrow.fp-next {
+  border-width: 14.5px 0 14.5px 17px;
 }

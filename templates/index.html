@@ -5,19 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>360G-STEPS街舞社公演入场券！开抢啦！还有程序员在跳舞的视频!</title>
     <meta name="description" content="一个连程序猿都会Hip-Hop的街舞社团，来瞧瞧我们的另一面！" />
-    <link rel="stylesheet" href="static/css/main.css">
-    <link rel="stylesheet" href="static/css/count.css">
     <link rel="stylesheet" href="static/css/layer.css">
+    <link rel="stylesheet" href="static/css/main.css?v=8">
+    <!-- <link rel="stylesheet" href="static/css/count.css"> -->
+
 </head>
 <body>
 <img src="static/img/logo.png" style="width:0px; height:0px; overflow:hidden; position: absolute;"  alt="">
 
 <div id="formbackground" style="position:absolute; width:100%; height:100%; z-index:-1">
-    <img src="static/img/bg.png" height="100%" width="100%"/>
-</div>
-
-<div class="video-link">
-    <a href="/activity"><img src="static/img/video.png" alt=""></a>
+    <img src="static/img/cheerbg.png" height="100%" width="100%"/>
 </div>
 
 <div class="info">
@@ -25,43 +22,79 @@
 </div>
 
 <div class="title-wrap">
-   <img src="static/img/title1.png" class="title1">
-   <img src="static/img/title2.png" class="title2">
-</div>
-<div id="counter" style="visibility: hidden">
-    <span class="days"></span>
-    <span class="hours"></span>
-    <span class="minutes"></span>
-    <span class="seconds"></span>
+   <!-- <img src="static/img/title1.png" class="title1">
+   <img src="static/img/title2.png" class="title2"> -->
 </div>
 <div id="full" style="display:none">{{remain_cheer_num}}</div>
 <div class="ticket-wrapper">
-    <h3 class="ticket-title">G-STEPS 3周年公演入场票</h3>
     <div class="ticket_img_wrapper">
-        <img src="static/img/ticket.png" class="ticket" alt="">
-        {% if remain_cheer_num<=0%}
 
-        {% elif  remain_cheer_num<=20 %}
-            <div class="ticket_modal"></div>
-            <div class="ticket_modal"></div>
-            <div class="ticket_modal"></div>
-            <div class="ticket_modal"></div>
-            <div class="ticket_modal"></div>
-            <div class="ticket_modal"></div>
-            <div class="ticket_modal"></div>
-            <div class="ticket_modal"></div>
-            <div class="ticket_modal"></div>
-            <div class="ticket_modal"></div>
-            <div class="ticket_modal"></div>
-            <div class="ticket_modal"></div>
-            <div class="ticket_modal"></div>
-            <div class="ticket_modal"></div>
-            <div class="ticket_modal"></div>
-            <div class="ticket_modal"></div>
-            <div class="ticket_modal"></div>
-            <div class="ticket_modal"></div>
-            <div class="ticket_modal"></div>
-            <div class="ticket_modal"></div>
+
+
+
+        {% if remain_cheer_num<=0%}
+    <img src="static/img/red_bg.png" class="ticket" alt="">
+    <div class="float_area">
+      <img src="static/img/700.png" class="ticket gsteps_six" alt="">
+      <ul class="wrapper_heart">
+        <li class="heart">
+          <image class="image_heart" src="static/img/choose_heart.png"></image>
+          <image class="image_heart" src="static/img/choose_heart.png"></image>
+          <image class="image_heart" src="static/img/choose_heart.png"></image>
+          <image class="image_heart" src="static/img/choose_heart.png"></image>
+          <image class="image_heart" src="static/img/choose_heart.png"></image>
+          <image class="image_heart" src="static/img/choose_heart.png"></image>
+          <image class="image_heart" src="static/img/choose_heart.png"></image>
+          <image class="image_heart" src="static/img/choose_heart.png"></image>
+        </li>
+        <li class="heart">
+          <image class="image_heart" src="static/img/choose_heart.png"></image>
+          <image class="image_heart" src="static/img/choose_heart.png"></image>
+          <image class="image_heart" src="static/img/choose_heart.png"></image>
+          <image class="image_heart" src="static/img/choose_heart.png"></image>
+          <image class="image_heart" src="static/img/choose_heart.png"></image>
+          <image class="image_heart" src="static/img/choose_heart.png"></image>
+          <image class="image_heart" src="static/img/choose_heart.png"></image>
+          <image class="image_heart" src="static/img/choose_heart.png"></image>
+        </li>
+      </ul>
+      <div class="remain_num">
+          <img src="static/img/gsteps_success.png" class="ticket gsteps_person_last" alt="">
+      </div>
+    </div>
+        {% elif  remain_cheer_num<=16 %}
+            <img src="static/img/red_bg.png" class="ticket" alt="">
+            <div class="float_area">
+              <img src="static/img/700.png" class="ticket gsteps_six" alt="">
+              <ul class="wrapper_heart">
+                <li class="heart">
+                  <image class="image_heart" src="static/img/unchoose_heart.png"></image>
+                  <image class="image_heart" src="static/img/unchoose_heart.png"></image>
+                  <image class="image_heart" src="static/img/unchoose_heart.png"></image>
+                  <image class="image_heart" src="static/img/unchoose_heart.png"></image>
+                  <image class="image_heart" src="static/img/unchoose_heart.png"></image>
+                  <image class="image_heart" src="static/img/unchoose_heart.png"></image>
+                  <image class="image_heart" src="static/img/unchoose_heart.png"></image>
+                  <image class="image_heart" src="static/img/unchoose_heart.png"></image>
+                </li>
+                <li class="heart">
+                  <image class="image_heart" src="static/img/unchoose_heart.png"></image>
+                  <image class="image_heart" src="static/img/unchoose_heart.png"></image>
+                  <image class="image_heart" src="static/img/unchoose_heart.png"></image>
+                  <image class="image_heart" src="static/img/unchoose_heart.png"></image>
+                  <image class="image_heart" src="static/img/unchoose_heart.png"></image>
+                  <image class="image_heart" src="static/img/unchoose_heart.png"></image>
+                  <image class="image_heart" src="static/img/unchoose_heart.png"></image>
+                  <image class="image_heart" src="static/img/unchoose_heart.png"></image>
+                </li>
+              </ul>
+              <div class="remain_num">
+                  <img src="static/img/gsteps_person_last.png" class="ticket gsteps_person_last" alt="">
+                  <div class="exchange-wrapper">
+                    <p>你还差<span class="remain_cheer_num">{{ remain_cheer_num }}</span>人加油即可兑换</p>
+                </div>
+              </div>
+            </div>
         {% endif%}
 
     </div>
@@ -73,40 +106,39 @@
 <!-- 集齐赞的状态-->
 <!-- 在这里嵌入相应的html即可-->
 
-<div class="exchange-wrapper">
-    <p>恭喜您已成功兑换，现场出具此页面即可入场</p>
+<div class="success-wrapper success-wrapper-success">
+    <img src="static/img/success_instruction.png" class="ticket" alt="">
 </div>
 
-<div class="success-wrapper">
-    <h3>注意：</h3>
-    <p>入场票仅代表拥有入场的权限</p>
-    <p>也就是说您得尽量去早一些排队入场</p>
-    <p>否则太晚，座位都被坐完，您就可能只能站着看</p>
+<div class="gsteps-address">
+  <img src="static/img/address.png" class="ticket" alt="">
 </div>
 
-<h3 class="ticket-title">入场时间：6月17日晚19:30</h3>
-<h3 class="ticket-title">演出地点：798剧场</h3>
-
-{% elif  remain_cheer_num<=20 %}
+{% elif  remain_cheer_num<=16 %}
 <!--已经被加油但是还未集齐的状态 -->
 
-<div class="exchange-wrapper">
+<div class="exchange-wrapper" style="display:none;">
     <p>你还差<span class="remain_cheer_num">{{ remain_cheer_num }}</span>人加油即可兑换</p>
 </div>
 
+<div class="success-wrapper">
+    <img src="static/img/instruction.png" class="ticket" alt="">
+</div>
+
 <div class="button-wrapper">
-    <button class="btn btn-help">让盆友帮忙兑票</button>
+    <a href="javascript:;" class="btn btn-help"><img src="static/img/share_friend.png" alt=""></a>
+    <!-- <button class="btn btn-help">让盆友帮忙兑票</button> -->
     <p class="want-tips" style="display:none">发送给盆友的方法：点击右上角分享，你懂的!</p>
 </div>
 
 {% endif%}
 
 <div class="footer">
-<a href="#">360G-STEPS街舞社</a>|<a href="#">360员工关怀</a>
+<!-- <a href="#">360G-STEPS街舞社</a>|<a href="#">360员工关怀</a> -->
 </div>
 
 <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
-<script src="static/js/main.js"></script>
+<script src="static/js/main.js?v=2"></script>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script>
 $.ajax({
@@ -147,12 +179,9 @@ $.ajax({
 </script>
 
 <script>
-    var ticket_models = $(".ticket_modal")
-    ticket_models.each(function(index, ele) {
-        $(this).css("left", index * 5 + "%")
-    })
-    var num = 20 - parseInt($(".remain_cheer_num").eq(0).text());
-    ticket_models.filter(":lt("+ num +")").addClass('hide');
+    var image_heart = $(".image_heart")
+    var num = 16 - parseInt($(".remain_cheer_num").eq(0).text());
+    image_heart.filter(":lt("+ num +")").attr("src", "static/img/choose_heart.png");
 
     $(".btn-help").on('click', function(){
         $(".want-tips").show();

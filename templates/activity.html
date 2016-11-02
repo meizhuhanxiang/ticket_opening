@@ -3,51 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>360G-STEPS街舞社本周五三周年公演！互联网界最会HIP-HOP的团队！门票开抢！哟哟切克闹！</title>
+<!--     <title>360G-STEPS街舞社本周五三周年公演！互联网界最会HIP-HOP的团队！门票开抢！哟哟切克闹！</title> -->
     <meta name="description" content="一个连程序猿都会Hip-Hop的街舞社团，来瞧瞧我们的另一面！" />
     <link rel="stylesheet" href="static/css/main.css">
-    <link rel="stylesheet" href="static/css/count.css">
     <link rel="stylesheet" href="static/css/layer.css">
+    <link rel="stylesheet" href="static/css/jquery.fullPage.css">
+    <link rel="stylesheet" href="static/css/animate.min.css">
+    <link rel="stylesheet" href="static/css/count.css">
 </head>
 <body>
-<img src="static/img/glogo.png" style="width:0px; height:0px; overflow:hidden; position: absolute;" alt="">
+<!-- <img src="static/img/glogo.png" style="width:0px; height:0px; overflow:hidden; position: absolute;" alt=""> -->
 <div id="formbackground" style="position:absolute; width:100%; height:100%; z-index:-1">
-<img src="static/img/bg.png" height="100%" width="100%"/>
+
 </div>
 
-<div class="title-wrap">
-   <img src="static/img/title1.png" class="title1">
-   <img src="static/img/title2.png" class="title2">
-</div>
-<div id="counter">
-    <span class="days"></span>
-    <span class="hours"></span>
-    <span class="minutes"></span>
-    <span class="seconds"></span>
-</div>
+<div id="fullpage">
+    <div class="section " id="section1">
+        <img class="animated zoomIn texttitle" src="static/img/section/section1/section1-texttitle.png" />
+        <img class="animated zoomIn hand" src="static/img/section/section1/section1-hand.png" />
+    </div>
+    <div class="section black-bg" id="section2">
+        <h3 class="title-wrapper">
+            <img class="title" src="static/img/section/section2/title.png" />
+        </h3>
+        <div class="slide" id="slide1">
+            <!-- <p>滚动到第二屏后的回调函数执行的效果</p> -->
+            <div class="box-wrapper">
+                <img class="person1" src="static/img/section/section2/slide1/section2-slide1-person1.png" style="visibility: hidden;" />
+                <img class="person2" src="static/img/section/section2/slide1/section2-slide1-person2.png" style="visibility: hidden;" />
+                <img class="name" src="static/img/section/section2/slide1/name.png" style="visibility: hidden;" />
+            </div>
+        </div>
+        <div class="slide" id="slide2">
+            <div class="box-wrapper">
+                <img class="person1" src="static/img/section/section2/slide2/person1.png"  style="visibility: hidden;"/>
+                <img class="person2" src="static/img/section/section2/slide2/person2.png"  style="visibility: hidden;"/>
+                <img class="name" src="static/img/section/section2/slide2/name.png" style="visibility: hidden;" />
+            </div>
+        </div>
+        <div class="slide" id="slide3">
+            <div class="box-wrapper">
+                <img class="person1" src="static/img/section/section2/slide3/person1.png"  style="visibility: hidden;"/>
+                <img class="person2" src="static/img/section/section2/slide3/person2.png"  style="visibility: hidden;"/>
+                <img class="name" src="static/img/section/section2/slide3/name.png" style="visibility: hidden;" />
+            </div>
+        </div>
+        <div class="slide" id="slide4">
+            <div class="box-wrapper">
+                <img class="person1" src="static/img/section/section2/slide4/person1.png"  style="visibility: hidden;"/>
+                <img class="person2" src="static/img/section/section2/slide4/person2.png"  style="visibility: hidden;"/>
+                <img class="name" src="static/img/section/section2/slide4/name.png" style="visibility: hidden;"/>
+            </div>
+        </div>
+        <div class="slide" id="slide5">
+            <div class="box-wrapper">
+                <img class="person1" src="static/img/section/section2/slide5/person1.png"  style="visibility: hidden;"/>
+                <img class="person2" src="static/img/section/section2/slide5/person2.png"  style="visibility: hidden;"/>
+                <img class="name" src="static/img/section/section2/slide5/name.png" style="visibility: hidden;" />
+            </div>
+        </div>
+        <div class="slide" id="slide6">
+            <div class="box-wrapper">
+                <img class="person1" src="static/img/section/section2/slide6/person1.png"  style="visibility: hidden;"/>
+                <img class="person2" src="static/img/section/section2/slide6/person2.png"  style="visibility: hidden;"/>
+                <img class="name" src="static/img/section/section2/slide6/name.png" style="visibility: hidden;" />
+            </div>
+        </div>
 
-<div class="video-wrap">
-<iframe frameborder="0" width="90%" src="http://v.qq.com/iframe/player.html?vid=r0306o2uc94&amp;tiny=0&amp;auto=0" allowfullscreen></iframe>
-    <!-- <iframe width="90%" src="http://player.youku.com/embed/XMTU5OTE5ODQ3Ng==" frameborder=0 allowfullscreen></iframe> -->
-</div>
+    </div>
+    <div class="section black-bg" id="section3">
+        <img class="white-bg" src="static/img/section/section3/white-bg.png" alt="" style="visibility: hidden;">
+        <img class="text-title" src="static/img/section/section3/text-title.png" alt="" style="visibility: hidden;">
+        <img class="bonus" src="static/img/section/section3/bonus.png" alt="" style="visibility: hidden;">
+        <img class="explain-text" src="static/img/section/section3/explain-text.png" alt="" style="visibility: hidden;">
+<!--         <ul class="bonus-wrapper">
+            <li class="bonus bonus1">
+                <div class="avtar">asd</div>
+                <div class="slogan">asd</div>
+            </li>
+            <li class="bonus bonus2">
+                <div class="avtar">asd</div>
+                <div class="slogan">asd</div>
+            </li>
+        </ul> -->
+    </div>
+    <div class="section black-bg" id="section4">
+        <h3 class="title-wrapper">
+            <img class="title" src="static/img/section/section4/title.png" />
+        </h3>
+        <div class="box-wrapper">
+            <img class="teacher" src="static/img/section/section4/teacher1.png"/>
+        </div>
+    </div>
+    <div class="section black-bg" id="section5">
+        <h3 class="title-wrapper">
+            <img class="title" src="static/img/section/section4/title.png" />
+        </h3>
+        <div class="box-wrapper">
+            <img class="teacher" src="static/img/section/section5/teacher2.png"/>
+        </div>
+    </div>
+    <div class="section black-bg" id="section6">
+        <h3 class="title-wrapper">
+            <img class="title" src="static/img/section/section4/title.png" />
+        </h3>
+        <div class="box-wrapper">
+            <img class="teacher" src="static/img/section/section6/teacher3.png"/>
+        </div>
+    </div>
+    <div class="section" id="section7">
 
-<div class="introtext-wrapper">
-    <p>G-STEPS是360公司内部，一个连程序猿都会Hip-Hop的街舞社团，来瞧瞧我们的另一面！</p>
-</div>
+    </div>
 
-<div class="button-wrapper">
-    <a href="/" class="btn btn-want">我要门票</a>
 </div>
-
-<div class="footer">
-<a href="#">360G-STEPS街舞社</a>|<a href="#">360员工关怀</a>
-</div>
+    <a class="button-wrapper" href="/"><img class="bottom-button" src="static/img/section/button.png" /></a>
 
 
 <script src="static/js/jquery.js"></script>
-<script src="static/js/main.js"></script>
-<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
-<script>
-</script>
+<script src="static/js/jquery.fullPage.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="static/js/section.js"></script>
+
 </body>
 </html>

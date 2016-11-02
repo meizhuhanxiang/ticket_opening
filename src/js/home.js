@@ -1,11 +1,8 @@
 $(document).ready(function() {
+    var erweima;
     function loadQrcode() {
-        layer.open({
-            title: [
-                '长按关注官方账号',
-                'background-color:#182f52; color:#fff;'
-            ],
-            content: "<img src='/static/img/qrcode.png'></img><p>长按关注G-STEPS街舞社可随时咨询问题</p>",
+        erweima = layer.open({
+            content: "<div class='close_wrapper'><img src='/static/img/erweima.png' style='width: 100%'></img><div class='close'></div><img src='/static/img/erweima_context.png' class='erweima_context'></img></div>",
         })
     }
 
@@ -13,9 +10,14 @@ $(document).ready(function() {
         loadQrcode();
     })
 
+    $(document).on("click", '.close', function() {
+        layer.close(erweima)
+    })
+
     $(".footer a").on("click", function() {
         loadQrcode();
     })
+
 
 
 

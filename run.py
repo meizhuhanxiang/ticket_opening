@@ -262,7 +262,7 @@ def application(env, start_response):
 
 if __name__ == '__main__':
     # app.wsgi_app = ProxyFix(app.wsgi_app)
-    # app.debug = True
+    app.debug = True
     app.secret_key = 'opends-client-secrets'
     app.run(host='0.0.0.0', port=9003)
     app.run()

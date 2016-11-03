@@ -154,12 +154,23 @@ def get_menu_share_conf(url):
 
 @app.route('/conf_menu_share', methods=['GET', 'POST'])
 def conf_menu_share():
+    current_page_url = request.args.get('current_page_url', '')
     url = '%s/?union_id=%s' % (DOMAIN, session.get('union_id', ''))
+    if current_page_url:
+        if current_page_url.find('cheer') !=- 1:
+            url = '%s/?union_id=%s&from=groupmessage' % (DOMAIN, session.get('union_id', ''))
+        elif current_page_url.find('activity') != -1:
+            url = '%s/activity?from=singlemessage' % DOMAIN
+    print url
     return get_menu_share_conf(url)
 
 @app.route('/get_share_url', methods=['GET', 'POST'])
 def get_share_url():
+    current_page_url = request.args.get('current_page_url', '')
     url = '%s/?union_id=%s' % (DOMAIN, session.get('union_id', ''))
+    if current_page_url:
+        if current_page_url.find('cheer') !=- 1:
+            url = '%s/cheer' % DOMAIN
     return url
 
 
@@ -252,6 +263,7 @@ def async_cheer():
 
 
 @app.route('/activity', methods=['POST', 'GET'])
+@login_required
 def activity():
     return render_template('activity.html')
 

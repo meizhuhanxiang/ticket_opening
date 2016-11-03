@@ -158,7 +158,7 @@ def conf_menu_share():
     return get_menu_share_conf(url)
 
 @app.route('/get_share_url', methods=['GET', 'POST'])
-def conf_menu_share():
+def get_share_url():
     url = '%s/?union_id=%s' % (DOMAIN, session.get('union_id', ''))
     return url
 

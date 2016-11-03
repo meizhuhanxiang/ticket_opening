@@ -8,3 +8,4 @@ global_conf.py
 node_modules/
 public/
 .deploy*/
+sftp-config.json

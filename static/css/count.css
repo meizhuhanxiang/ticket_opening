@@ -29,7 +29,7 @@
   background-size: cover;
   width: 80%;
   margin: 0 auto;
-  overflow: hidden;
+  /*overflow: hidden;*/
   height: 80%;
 }
 #section1 {
@@ -56,16 +56,17 @@
     background-size: cover;*/
 }
 #section2 #slide1 .person1 {
-  position: relative;
-  top: -7%;
+  position: absolute;
+  top: -6%;
   width: 100%;
+  left: 0;
   z-index: 2;
 }
 #section2 #slide1 .person2 {
   width: 100%;
-  position: relative;
+  position: absolute;
+  bottom: -7%;
   left: 0;
-  top: -33%;
 }
 #section2 #slide1 .name {
   width: 53%;

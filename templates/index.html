@@ -6,7 +6,7 @@
     <title>G-STEPS开业送现金券啦！</title>
     <meta name="description" content="一个连程序猿都会Hip-Hop的街舞社团，来瞧瞧我们的另一面！" />
     <link rel="stylesheet" href="static/css/layer.css">
-    <link rel="stylesheet" href="static/css/main.css?v=9">
+    <link rel="stylesheet" href="static/css/main.css?v=10">
     <!-- <link rel="stylesheet" href="static/css/count.css"> -->
 
 </head>
@@ -147,6 +147,9 @@ $.ajax({
   url: "/conf_menu_share",
   type: "GET",
   dataType: "json",
+   data: {
+    current_page_url: location.host + "/index.html"
+  },
   success: function(data) {
         var config = {
             debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。

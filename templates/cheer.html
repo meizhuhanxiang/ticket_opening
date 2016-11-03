@@ -121,7 +121,7 @@ $.ajax({
   type: "GET",
   dataType: "json",
   data: {
-    current_page_url: location.host + "/cheer.html"
+    current_page_url: window.location.href
   },
   success: function(data) {
         var config = {

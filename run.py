@@ -155,12 +155,7 @@ def get_menu_share_conf(url):
 @app.route('/conf_menu_share', methods=['GET', 'POST'])
 def conf_menu_share():
     current_page_url = request.args.get('current_page_url', '')
-    url = '%s/?union_id=%s' % (DOMAIN, session.get('union_id', ''))
-    if current_page_url:
-        if current_page_url.find('cheer') !=- 1:
-            url = '%s/?union_id=%s&from=groupmessage' % (DOMAIN, session.get('union_id', ''))
-        elif current_page_url.find('activity') != -1:
-            url = '%s/activity?from=singlemessage' % DOMAIN
+    url = current_page_url
     print url
     return get_menu_share_conf(url)
 

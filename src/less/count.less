@@ -56,19 +56,20 @@
 
 #section2 #slide1 {
   .box-wrapper {
-    background: url(../img/section/section2/slide1/bg.png);
-    background-size: cover;
+/*    background: url(../img/section/section2/slide1/bg.png);
+    background-size: cover;*/
   }
   .person1 {
     position: relative;
-    top: -37px;
-    width: 90%;
+    top: -7%;
+    width: 100%;
+    z-index: 2;
   }
   .person2 {
-    width: 51%;
+    width: 100%;
     position: relative;
-    left: -48px;
-    top: -57px;
+    left: 0;
+    top: -33%;
   }
   .name {
     width: 53%;
@@ -78,144 +79,168 @@
   }
 }
 #section2 #slide2 {
-  .box-wrapper {
+/*  .box-wrapper {
     background: url(../img/section/section2/slide2/bg.png);
     background-size: cover;
-  }
+  }*/
   .person1 {
     position: absolute;
-    top: 35%;
-    width: 51%;
-    left: -4%;
+    top: 33%;
+    width: 54%;
+    left: 0;
+  }
+  .person2 {
+    width: 50%;
+    position: absolute;
+    top: 3%;
+    right: 0;
+  }
+  .name {
+    width: 40%;
+    position: absolute;
+    left: 58%;
+    top: 70%;
+  }
+}
+#section2 #slide3 {
+/*  .box-wrapper {
+    background: url(../img/section/section2/slide3/bg.png);
+    background-size: cover;
+  }*/
+  .person1 {
+    position: absolute;
+    top: -9%;
+    width: 100%;
+    left: -9%;
+    z-index: 2;
   }
   .person2 {
     width: 64%;
     position: absolute;
-    left: 56%;
-    top: 9%;
-  }
-  .name {
-    width: 43%;
-    position: absolute;
-    left: 54%;
-    top: 67%;
-  }
-}
-#section2 #slide3 {
-  .box-wrapper {
-    background: url(../img/section/section2/slide3/bg.png);
-    background-size: cover;
-  }
-  .person1 {
-    position: absolute;
-    top: 10%;
-    width: 66%;
-    left: 9%;
-  }
-  .person2 {
-    width: 32%;
-    position: absolute;
-    left: 52%;
-    top: 44%;
+    left: 47%;
+    top: 19%;
   }
   .name {
     width: 30%;
     position: absolute;
-    left: 8%;
+    left: 5%;
     top: 66%;
   }
 }
 #section2 #slide4 {
-  .box-wrapper {
+/*  .box-wrapper {
     background: url(../img/section/section2/slide4/bg.png);
     background-size: cover;
-  }
+  }*/
   .person1 {
     position: absolute;
-    top: 1%;
-    width: 43%;
-    left: -2%;
+    top: 0%;
+    width: 100%;
+    left: 0%;
   }
   .person2 {
-    width: 83%;
+    width: 90%;
     position: absolute;
-    left: 34%;
-    top: 58%;
+    bottom: 0;
+    right: 0;
   }
   .name {
-    width: 24%;
+    width: 25%;
     position: absolute;
     left: 73%;
     top: 4%;
   }
 }
 #section2 #slide5 {
-  .box-wrapper {
+/*  .box-wrapper {
     background: url(../img/section/section2/slide5/bg.png);
     background-size: cover;
-  }
+  }*/
   .person1 {
     position: absolute;
-    top: 9%;
-    width: 58%;
-    left: 37%;
+    top: -8%;
+    width: 100%;
+    right: 0;
   }
   .person2 {
-    width: 50%;
+    width: 100%;
     position: absolute;
-    left: 10%;
-    top: 54%;
+    left: 0%;
+    bottom: -12%;
   }
   .name {
-    width: 56%;
+    width: 74%;
     position: absolute;
-    left: 22%;
-    top: 35%;
+    left: 15%;
+    top: 33%;
   }
 }
 #section2 #slide6 {
-  .box-wrapper {
+/*  .box-wrapper {
     background: url(../img/section/section2/slide6/bg.png);
     background-size: cover;
-  }
+  }*/
   .person1 {
     position: absolute;
-    top: 1%;
-    width: 82%;
-    left: 4%;
+    top: 0%;
+    width: 100%;
+    left: 0%;
   }
   .person2 {
-    width: 46%;
+    width: 100%;
     position: absolute;
-    left: 26%;
-    top: 66%;
+    left: 0%;
+    bottom: -2%;
   }
   .name {
-    width: 71%;
+    width: 76%;
     position: absolute;
-    left: 17%;
+    left: 12%;
     top: 51%;
   }
 }
-
-
+.music {
+    position: absolute;
+    z-index: 500;
+    width: 8%;
+    right: 2%;
+    top: 2%;
+    img {
+      width: 100%;
+    }
+}
+.rotate {
+  animation: 8s linear 0s normal none infinite rotate;
+  -webkit-animation:8s linear 0s normal none infinite rotate;
+}
+@-webkit-keyframes rotate{
+  from{-webkit-transform:rotate(0deg)}
+  to{-webkit-transform:rotate(360deg)}
+}
+.slide-down {
+  position: absolute;
+  bottom: 9%;
+  width: 28px;
+  left: 50%;
+  margin-left: -14px;
+  img{
+    width: 100%;
+  }
+}
 #section3 {
   background: url(../img/section/section3/bg.png);
   background-size: cover;
-  .gstar {
-    width: 80%;
-    margin-top: 10px;
-  }
+
   .white-bg {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 3%;
     position: relative;
     top: 27%;
     z-index: 1;
   }
   .text-title {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 3%;
     position: absolute;
     top: 29%;
     z-index: 2;
@@ -223,13 +248,13 @@
   }
     .bonus {
     width: 80%;
-    margin-top: 10px;
+    margin-top: 3%;
     position: relative;
     top: 24%;
   }
     .explain-text {
-    width: 70%;
-    margin-top: 10px;
+    width: 55%;
+    margin-top: 3%;
     position: relative;
     top: 24%;
   }

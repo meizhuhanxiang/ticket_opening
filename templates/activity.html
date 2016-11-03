@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--     <title>360G-STEPS街舞社本周五三周年公演！互联网界最会HIP-HOP的团队！门票开抢！哟哟切克闹！</title> -->
+    <title>G-STEPS开业送现金券啦！</title>
     <meta name="description" content="一个连程序猿都会Hip-Hop的街舞社团，来瞧瞧我们的另一面！" />
     <link rel="stylesheet" href="static/css/main.css">
-    <link rel="stylesheet" href="static/css/layer.css">
+    <!-- <link rel="stylesheet" href="static/css/layer.css"> -->
     <link rel="stylesheet" href="static/css/jquery.fullPage.css">
     <link rel="stylesheet" href="static/css/animate.min.css">
-    <link rel="stylesheet" href="static/css/count.css">
+    <link rel="stylesheet" href="static/css/count.css?v=2">
 </head>
 <body>
-<!-- <img src="static/img/glogo.png" style="width:0px; height:0px; overflow:hidden; position: absolute;" alt=""> -->
+<img src="static/img/gsteps_logo.png" style="width:0px; height:0px; overflow:hidden; position: absolute;" alt="">
 <div id="formbackground" style="position:absolute; width:100%; height:100%; z-index:-1">
 
 </div>
+<audio id="audio" autoplay src="http://oe9aa31ex.bkt.clouddn.com/MKL%20-%20My%20light%20%28Music%20by%20MKL%29.mp3" controls="controls" style="display: none;">
+</audio>
 
+<a class="music rotate" id="music" href="javascript:;"><img src="static/img/music.png" alt=""></a>
 <div id="fullpage">
     <div class="section " id="section1">
         <img class="animated zoomIn texttitle" src="static/img/section/section1/section1-texttitle.png" />
@@ -29,8 +32,8 @@
         <div class="slide" id="slide1">
             <!-- <p>滚动到第二屏后的回调函数执行的效果</p> -->
             <div class="box-wrapper">
-                <img class="person1" src="static/img/section/section2/slide1/section2-slide1-person1.png" style="visibility: hidden;" />
-                <img class="person2" src="static/img/section/section2/slide1/section2-slide1-person2.png" style="visibility: hidden;" />
+                <img class="person1" src="static/img/section/section2/slide1/person1.png" style="visibility: hidden;" />
+                <img class="person2" src="static/img/section/section2/slide1/person2.png" style="visibility: hidden;" />
                 <img class="name" src="static/img/section/section2/slide1/name.png" style="visibility: hidden;" />
             </div>
         </div>
@@ -76,16 +79,6 @@
         <img class="text-title" src="static/img/section/section3/text-title.png" alt="" style="visibility: hidden;">
         <img class="bonus" src="static/img/section/section3/bonus.png" alt="" style="visibility: hidden;">
         <img class="explain-text" src="static/img/section/section3/explain-text.png" alt="" style="visibility: hidden;">
-<!--         <ul class="bonus-wrapper">
-            <li class="bonus bonus1">
-                <div class="avtar">asd</div>
-                <div class="slogan">asd</div>
-            </li>
-            <li class="bonus bonus2">
-                <div class="avtar">asd</div>
-                <div class="slogan">asd</div>
-            </li>
-        </ul> -->
     </div>
     <div class="section black-bg" id="section4">
         <h3 class="title-wrapper">
@@ -116,13 +109,52 @@
     </div>
 
 </div>
-    <a class="button-wrapper" href="/"><img class="bottom-button" src="static/img/section/button.png" /></a>
+<a class="slide-down" href="javascript:;"><img class="slide-button" src="static/img/section/slide-down.png" /></a>
+<a class="button-wrapper" href="/"><img class="bottom-button" src="static/img/section/button.png" /></a>
 
 
 <script src="static/js/jquery.js"></script>
 <script src="static/js/jquery.fullPage.min.js"></script>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-<script src="static/js/section.js"></script>
+<script src="static/js/section.js?v=2"></script>
+<script>
 
+// console.log("http://" + location.host + '/static/img/logo.png')
+$.ajax({
+  url: "/conf_menu_share",
+  type: "GET",
+  dataType: "json",
+  success: function(data) {
+        var config = {
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+    appId: data.appid, // 必填，公众号的唯一标识
+    timestamp: data.timestamp, // 必填，生成签名的时间戳
+    nonceStr: data.noncestr, // 必填，生成签名的随机串
+    signature: data.signature,// 必填，签名，见附录1
+    jsApiList: data.js_api_list// 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+         }
+
+        // console.log(config);
+      wx.config(config);
+      wx.ready(function () {
+  wx.onMenuShareAppMessage({
+      title: '送你一个让你变得更COOL的红包！请认真对待！',
+      desc: 'GSTEPS专注零基础起步的上班族！给你体验另外一种更Cool的生活方式！',
+      link: data.link,
+      imgUrl: "http://" + location.host + '/static/img/gsteps_logo.png',
+      trigger: function (res) {
+      },
+      success: function (res) {
+      },
+      cancel: function (res) {
+      },
+      fail: function (res) {
+        alert(JSON.stringify(res));
+      }
+    });
+      })
+  }
+})
+</script>
 </body>
 </html>

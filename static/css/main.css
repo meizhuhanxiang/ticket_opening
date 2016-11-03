@@ -118,7 +118,7 @@ body {
   position: absolute;
   width: 100%;
   top: 0;
-  height: 20px;
+  height: 20%;
 }
 .close_wrapper .erweima_context {
   position: absolute;
@@ -217,9 +217,26 @@ body {
   font-size: 14px;
   margin-top: 2%;
   font-weight: bold;
+  position: absolute;
+  bottom: 10%;
+}
+.button-wrapper .want-tips img {
+  width: 80%;
+}
+.button-wrapper .want-tips span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .btn-help.friend-success {
   margin-top: 40%;
+}
+.btn-help.share_friend {
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .footer {
   position: absolute;

@@ -125,7 +125,7 @@ body {
   width: 50%;
   bottom: 16%;
   left: 50%;
-  transform: translateX(-50%);
+  margin-left: -25%;
 }
 .zan_wrapper {
   position: relative;
@@ -135,7 +135,7 @@ body {
   width: 74%;
   bottom: 20%;
   left: 50%;
-  transform: translateX(-50%);
+  margin-left: -37%;
 }
 .repeat_wrapper {
   position: relative;
@@ -145,7 +145,7 @@ body {
   width: 74%;
   bottom: 20%;
   left: 50%;
-  transform: translateX(-50%);
+  margin-left: -37%;
 }
 .layermcont {
   padding: 0;
@@ -227,7 +227,8 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  margin-left: -20%;
+  transform: translateY(-50%);
 }
 .btn-help.friend-success {
   margin-top: 40%;
@@ -236,7 +237,7 @@ body {
   position: absolute;
   bottom: 3%;
   left: 50%;
-  transform: translateX(-50%);
+  margin-left: -40%;
 }
 .footer {
   position: absolute;

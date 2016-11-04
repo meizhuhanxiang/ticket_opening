@@ -64,6 +64,7 @@ def login_required(f):
     def decorated_function(*args, **kwargs):
         if 'union_id' not in session or 'access_token' not in session:
             session['target_union_id'] = request.args.get('union_id', '')
+            session['last_url'] = request.path
             logging.info('login_required   target_union_id:%s' % session['target_union_id'])
             callback_url = urllib.quote_plus('%s/callback' % DOMAIN)
             urls = 'https://open.weixin.qq.com/connect/oauth2/authorize?' \
@@ -174,6 +175,7 @@ def callback():
     logging.info('-' * 50)
     code = request.args.get('code', '')
     state = request.args.get('state')
+    args = None
     if code:
         code_url = 'https://api.weixin.qq.com/sns/oauth2/access_token?' \
                    'appid=%s&secret=%s&code=%s&grant_type=authorization_code' % (APPID, APPSECRET, code)
@@ -188,6 +190,8 @@ def callback():
         logging.info('callbak target_union_id:%s' % args)
         if not args:
             args = user_info['union_id']
+    if  session['last_url'].find('activity') != -1:
+        return redirect('/activity')
     return redirect('/?union_id=%s' % args)
 
 

@@ -15,10 +15,10 @@
 .button-wrapper {
   position: absolute;
   bottom: 5px;
-  width: 230px;
+  width: 80%;
   margin: 0 auto;
   left: 50%;
-  margin-left: -115px;
+  margin-left: -40%;
 }
 .button-wrapper .bottom-button {
   width: 100%;
@@ -281,6 +281,18 @@
 #section7 {
   background: url(../img/section/section7/course.png);
   background-size: cover;
+}
+#section8 .middle {
+  width: 55%;
+  margin-top: 3%;
+  position: relative;
+  top: 15%;
+}
+#section8 .text {
+  width: 54%;
+  margin-top: 3%;
+  position: relative;
+  top: 17%;
 }
 @keyframes change {
   0% {

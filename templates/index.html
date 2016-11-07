@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>G-STEPS开业送现金券啦！</title>
+    <title>G-STEPS开业啦！</title>
     <meta name="description" content="一个连程序猿都会Hip-Hop的街舞社团，来瞧瞧我们的另一面！" />
     <link rel="stylesheet" href="static/css/layer.css">
     <link rel="stylesheet" href="static/css/main.css?v=11">
@@ -164,7 +164,7 @@ $.ajax({
       wx.config(config);
       wx.ready(function () {
 wx.onMenuShareTimeline({
-    title: '送你一个让你变得更COOL的方法！请认真对待!', // 分享标题
+    title: '一个让你变得更COOL的方法！请认真对待!', // 分享标题
     link: data.link, // 分享链接
     imgUrl: "http://" + location.host + '/static/img/gsteps_logo.png', // 分享图标
     success: function () {
@@ -176,7 +176,7 @@ wx.onMenuShareTimeline({
 });
 
   wx.onMenuShareAppMessage({
-      title: '送你一个让你变得更COOL的方法！请认真对待！',
+      title: '一个让你变得更COOL的方法！请认真对待！',
       desc: 'G-STEPS专注零基础起步的上班族的街舞培训！专收四肢不协调的童鞋！来玩吧！',
       link: data.link,
       imgUrl: "http://" + location.host + '/static/img/gsteps_logo.png',

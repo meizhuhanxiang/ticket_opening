@@ -137,7 +137,7 @@ $.ajax({
       wx.config(config);
       wx.ready(function () {
 wx.onMenuShareTimeline({
-    title: '送你一个让你变得更COOL的红包！请认真对待!', // 分享标题
+    title: '送你一个让你变得更COOL的方法！请认真对待!', // 分享标题
     link: data.link, // 分享链接
     imgUrl: "http://" + location.host + '/static/img/gsteps_logo.png', // 分享图标
     success: function () {
@@ -149,7 +149,7 @@ wx.onMenuShareTimeline({
 });
 
   wx.onMenuShareAppMessage({
-      title: '送你一个让你变得更COOL的红包！请认真对待！',
+      title: '送你一个让你变得更COOL的方法！请认真对待！',
       desc: 'GSTEPS专注零基础起步的上班族！给你体验另外一种更Cool的生活方式！',
       link: data.link,
       imgUrl: "http://" + location.host + '/static/img/gsteps_logo.png',

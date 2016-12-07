@@ -72,7 +72,7 @@ class ODBC():
 
     def register_user(self, user_info):
         conn, cursor = self.get_cursor()
-        sql = "select count(1) from `ticket_opening`.`user` where `open_id`='%s' and `union_id`='%s' " % (
+        sql = "select count(1) from `ticket_3card`.`user` where `open_id`='%s' and `union_id`='%s' " % (
             (user_info['open_id'], user_info['union_id']))
         cursor.execute(sql)
         res = cursor.fetchall()
@@ -97,7 +97,7 @@ class ODBC():
                 infos.append(str(user_info[x]))
             pre_compile = ','.join(pre_compile)
             keys = ','.join(user_info_keys)
-            sql = u'insert into `ticket_opening`.`user` (%s) values (%s)' % (keys, pre_compile)
+            sql = u'insert into `ticket_3card`.`user` (%s) values (%s)' % (keys, pre_compile)
             cursor.execute(sql, tuple(infos))
 
     def cheer(self, union_id, target_union_id):
@@ -106,7 +106,7 @@ class ODBC():
                 return CHEER_REPEAT
             else:
                 conn, cursor = self.get_cursor()
-                sql = 'insert into `ticket_opening`.`cheer` (`union_id`, `target_union_id`) values (%s, %s)'
+                sql = 'insert into `ticket_3card`.`cheer` (`union_id`, `target_union_id`) values (%s, %s)'
                 cursor.execute(sql, (union_id, target_union_id))
                 return RIGHT
         except Exception, e:
@@ -116,7 +116,7 @@ class ODBC():
     def has_cheer(self, union_id, target_union_id):
         try:
             conn, cursor = self.get_cursor()
-            sql = "select count(1) from `ticket_opening`.`cheer` where `union_id`='%s' and `target_union_id`='%s' " % (
+            sql = "select count(1) from `ticket_3card`.`cheer` where `union_id`='%s' and `target_union_id`='%s' " % (
                 union_id, target_union_id)
             cursor.execute(sql)
             res = cursor.fetchall()
@@ -133,7 +133,7 @@ class ODBC():
     def get_cheer_num(self, union_id):
         try:
             conn, cursor = self.get_cursor()
-            sql = "select count(1) from `ticket_opening`.`cheer` where `target_union_id`='%s' " % union_id
+            sql = "select count(1) from `ticket_3card`.`cheer` where `target_union_id`='%s' " % union_id
             cursor.execute(sql)
             res = cursor.fetchall()
             cheer_num = res[0][0]
@@ -147,7 +147,7 @@ class ODBC():
     def is_user_exist(self, union_id):
         try:
             conn, cursor = self.get_cursor()
-            sql = "select count(1) from `ticket_opening`.`user` where `union_id`='%s' " % union_id
+            sql = "select count(1) from `ticket_3card`.`user` where `union_id`='%s' " % union_id
             cursor.execute(sql)
             res = cursor.fetchall()
             if res[0][0] == 0:
@@ -163,11 +163,11 @@ class ODBC():
     def get_cheer_info(self, union_id):
         try:
             conn, cursor = self.get_cursor()
-            sql = "select `nickname`, `head_img_url` from `ticket_opening`.`user` u join `ticket_opening`.`cheer` c on c.`union_id` = u.`union_id` " \
+            sql = "select `nickname`, `head_img_url` from `ticket_3card`.`user` u join `ticket_3card`.`cheer` c on c.`union_id` = u.`union_id` " \
 			"where c.`target_union_id`=%s "
             cursor.execute(sql, (union_id,))
             friends_info = cursor.fetchall()
-            sql = " select `nickname`, `head_img_url` from `ticket_opening`.`user` u where u.`union_id`=%s " 
+            sql = " select `nickname`, `head_img_url` from `ticket_3card`.`user` u where u.`union_id`=%s " 
             cursor.execute(sql, (union_id,))
             self_info = cursor.fetchall()[0]
             return {'self_info':self_info, 'friends_info':friends_info}
@@ -181,7 +181,7 @@ class ODBC():
     def get_cache(self, cache_type):
         try:
             conn, cursor = self.get_cursor()
-            sql = "select `cache`, `update_time` from `ticket_opening`.`cache` t where `cache_type`=%s"
+            sql = "select `cache`, `update_time` from `ticket_3card`.`cache` t where `cache_type`=%s"
             cursor.execute(sql, (cache_type,))
             cache_info = cursor.fetchall()[0]
             if not cache_info:
@@ -204,11 +204,11 @@ class ODBC():
     def save_cache(self, cache, cache_type):
         try:
             conn, cursor = self.get_cursor()
-            sql = u'delete from `ticket_opening`.`cache` where `cache_type`=%s'
+            sql = u'delete from `ticket_3card`.`cache` where `cache_type`=%s'
             cursor.execute(sql, (cache_type,))
             import datetime
             a = datetime.datetime.now()
-            sql = u'insert into `ticket_opening`.`cache` (`cache_type`, `cache`, `update_time`) values (%s,  %s, %s)'
+            sql = u'insert into `ticket_3card`.`cache` (`cache_type`, `cache`, `update_time`) values (%s,  %s, %s)'
             cursor.execute(sql, (cache_type, cache, a))
             return True
         except Exception, e:

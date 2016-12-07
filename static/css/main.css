@@ -207,6 +207,9 @@ body {
 .button-wrapper .btn-cheerup {
   color: #fff;
   margin-bottom: 10px;
+  position: absolute;
+  bottom: 27%;
+  margin-left: -40%;
 }
 .button-wrapper .btn-cheerup img {
   width: 25%;
@@ -269,16 +272,25 @@ body {
 .info img {
   width: 100%;
 }
+.gsteps-address {
+  position: absolute;
+  bottom: 6%;
+}
 .gsteps-address .ticket {
-  width: 60%;
-  margin-left: 25%;
+  width: 75%;
+  margin-left: 12%;
 }
 .ticket-wrapper {
-  margin-top: 33%;
+  position: absolute;
   text-align: center;
+  top: 25%;
 }
 .ticket-wrapper .ticket {
-  width: 95%;
+  width: 92%;
+}
+.ticket-wrapper .gsteps_six {
+  width: 75%;
+  margin-top: 5%;
 }
 .ticket-wrapper .float_area {
   position: absolute;
@@ -338,9 +350,11 @@ body {
   padding: 10px;
 }
 .success-wrapper {
+  position: absolute;
+  top: 55%;
   width: 70%;
-  margin: 5px 5%;
-  padding: 2% 6%;
+  margin: 5% 5%;
+  padding: 0% 6%;
   color: #fff;
 }
 .success-wrapper.success-wrapper-success {

@@ -12,6 +12,15 @@ $(document).ready(function() {
         css3:true,
         loopBottom: true,
         afterLoad: function(anchorLink, index) {
+            if (index == 1) {
+                
+                setTimeout(function() {
+                    $("#section1 .dance").addClass("animated bounceInDown").css("visibility", "visible");
+                }, 500)
+                setTimeout(function() {
+                    $("#section1 .board").addClass("animated bounceInDown").css("visibility", "visible");
+                }, 1000)
+            }
             if (index == 2) {
                 var loadedSlide = $(this);
                 $("#section2 #slide1 .person1").addClass("animated slideInDown").css("visibility", "visible")
@@ -70,11 +79,11 @@ $(document).ready(function() {
         }
     });
 
-    setTimeout(function() {
-        $(".hand").hide();
-        $("#section1").append('<img class="animated bounceInDown board" src="static/img/section/section1/section1-board.png" />')
+    // setTimeout(function() {
+    //     $(".hand").hide();
+    //     $("#section1").append('<img class="animated bounceInDown board" src="static/img/section/section1/section1-board.png" />')
 
-    }, 2000)
+    // }, 2000)
     $("#music").on("click", function() {
         var audio = document.getElementById("audio");;
         if(audio.paused) {
